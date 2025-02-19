@@ -1238,10 +1238,51 @@ section,
   overflow: hidden;
   margin-bottom: 15px;
   border-radius: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hotels .card h3 {
+
+ 
+}
+.hotels .card .card-img .content{
+  position: absolute;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(1, 8, 33, 0.82);
+  transition: 0.3s ease;
+  top: 200%;
+  overflow: hidden;
+  z-index: -1;
+  transition: 0.6s ease;
 }
 
+
+.hotels .card .card-img .content p{
+  color: #fff;
+  position: absolute;
+  text-align: center;
+}
+.hotels .card:hover .content{
+  justify-content: center;
+  align-items: center;
+  height:385px;
+  top: 0;
+  z-index: 1;
+}
+.heading{
+  z-index: 3;
+  background-color: white;
+}
 .hotels .card .card-img img {
-  transition: 0.3s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .hotels .card h3 {
@@ -1746,4 +1787,20 @@ body {
 .card-title{
   color:#f82249
 }
+
+/*--------------------------------------------------------------
+# PIONEER Section
+--------------------------------------------------------------*/
+.redline h2 ::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+} 
 
