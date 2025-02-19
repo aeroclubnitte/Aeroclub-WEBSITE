@@ -1238,10 +1238,54 @@ section,
   overflow: hidden;
   margin-bottom: 15px;
   border-radius: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hotels .card h3 {
+
+ 
+}
+.hotels .card .card-img .content{
+  position: absolute;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(1, 8, 33, 0.82);
+  transition: 0.3s ease;
+  top: 200%;
+  overflow: hidden;
+  z-index: -1;
+  transition: 0.6s ease;
 }
 
+
+.hotels .card .card-img .content p{
+  color: #fff;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.hotels .card:hover .content{
+  justify-content: center;
+  align-items: center;
+  height:385px;
+  top: 0;
+  z-index: 1;
+}
+.heading{
+  z-index: 3;
+  background-color: white;
+}
 .hotels .card .card-img img {
-  transition: 0.3s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .hotels .card h3 {
@@ -1693,5 +1737,57 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+body {
+  background-color:  #eee;
+}
+.title {
+ 
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
 
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+     
+}
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 5;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+    margin-top:20px;
+}
+
+.carousel-indicators li {
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
+}
+.carousel-indicators li {
+    border-radius: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: #404040;
+}
+.carousel-indicators .active {
+    background-color: white;
+    max-width: 12px;
+    margin: 0 3px;
+    height: 12px;
+}
+.btn {
+  margin-top: auto;
+}
+.card-title{
+  color:#f82249
+}
 
