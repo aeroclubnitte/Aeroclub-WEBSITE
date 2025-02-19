@@ -6,8 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-/*--------------------------------------------------------------
-# Font & Color Variables
+/*-------------------------------------------------------------- Font & Color Variables
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
@@ -236,8 +235,14 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 56px;
   margin-right: 8px;
+}
+@media (max-width: 768px) {
+  .header .logo img {
+    max-height: 36px;
+  margin-right: 8px;
+  }
 }
 
 .header .logo h1 {
