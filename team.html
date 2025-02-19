@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Aeroclub Nitte</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/AERO/logo aero.png" rel="icon">
+  <link href="assets/img/AERO/logo aero.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Pop-up styles */
+        .popup {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          overflow: auto;
+          /* Ensure the entire pop-up is scrollable */
+        }
+    
+        .popup-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          max-width: 800px;
+          max-height: 80vh;
+          /* Set a maximum height for the content */
+          overflow-y: auto;
+          /* Make the content scrollable */
+        }
+    
+        .popup h2 {
+          color: #333;
+        }
+    
+        .popup p {
+          color: #4e79a4;
+        }
+    
+        .popup ul {
+          list-style-type: disc;
+          padding-left: 20px;
+        }
+    
+        .popup button {
+          background-color: #333;
+          color: #2676c2cb;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+    
+        .popup button:hover {
+          background-color: #4580ad;
+        }
+    
+        /* Close button style */
+        .close {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 20px;
+          color: #555555;
+          cursor: pointer;
+        }
+    
+        .close:hover {
+          color: #4e3333;
+        }
+          /* Navbar styles */
+          .navbar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #008cba; /* Navbar background color */
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        position: sticky; /* Makes the navbar sticky */
+        top: 0; /* Stick to the top of the page */
+        z-index: 1000; /* Ensure it stays above other elements */
+    }
+    
+    .navbar li {
+        float: left;
+    }
+    
+    .navbar li a {
+        display: block;
+        color: rgb(26, 32, 220);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    }
+    
+    .navbar li a:hover {
+        background-color: #005f73; /* Darker blue on hover */
+        transform: scale(1.1); /* Slight zoom-in effect */
+    }
+    
+    
+    /* Dropdown styles */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropbtn {
+        background-color: #008cba;
+        color: white;
+        padding: 14px 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.642);
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: rgb(0, 0, 0);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+    
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover .dropbtn {
+        background-color: #005f73;
+    }
+    
+    @media (max-width: 1200px) {
+        .team-container {
+            grid-template-columns: repeat(4, 1fr); /* 4 member3s per row on medium screens */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .team-container {
+            grid-template-columns: repeat(2, 1fr); /* 2 member3s per row on smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .team-container {
+            grid-template-columns: 4fr; /* 1 member3 per row on very small screens */
+        }
+    }
+    .masthead{
+        background-image: url('../img/team/coreteamFinal.png');
+        background-size: cover;
+        min-height: 120vh;
+        background-position: center;
+        position: relative;
+        top: 0;
+    }
+    @media (max-width: 768px){
+        
+        
+        .masthead{
+            min-height: 25vh;
+        }
+    }
+    @media (min-width:769px ) and ( max-width:1024px){
+        .masthead{
+            min-height: 40vh;
+        }
+    }
+    .col-md-6 {
+        padding-top: 20px; /* Adjust the value according to your preference */
+    }
+    html {
+              scroll-behavior: smooth;
+              }
+    
+       
+            body {
+                margin: 0;
+                font-family: "Montserrat";
+            }
+            
+            /* Wrapper for background image and content */
+            .background-wrapper 
+            {
+                position: relative;
+                background-image: url('../img/team/coreteamFinal.png');
+                background-size: cover;
+                background-position: center;
+                height: 100vh; /* Adjust height as needed */
+            }
+            @media (max-width: 768px){
+                .col-md-6 .text-md-right {
+          justify-content: center;
+          display: inline-flex;
+          text-align: center;
+          margin-top: 30px; /* Adjust top margin as needed for more space */
+        }
+                .background-wrapper{
+                    min-height: 50vh;
+                }
+            }
+            
+            /* Semi-transparent overlay */
+            .background-wrapper::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(0deg, rgba(206, 209, 209, 0), rgba(11, 84, 221, 0)); /* Adjust colors and opacity */
+                z-index: 1;
+            }
+            .background-wrapper > * {
+               position: relative;
+                z-index: 2;
+              }
+            /* Content on top of the background */
+            .content {
+                position: relative;
+                z-index: 2;
+                color: rgba(38, 38, 174, 0.649); /* Text color */
+                padding: 20px;
+                text-align: center;
+            }
+            .team-section {
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .team-container {
+        background-color: #B0E0E6; /* Powder blue background behind the cards */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dynamic columns */
+        gap: 10px;
+        padding: 10px;
+        justify-content: center; /* Ensures the grid is centered */
+    }
+    
+    
+    
+    .team-card {
+        
+        background-color: rgba(9, 5, 139, 0.267); /* Powder blue */
+        border-radius: 20px; /* Rounds the corners of the card */
+        padding: 20px; /* Adds space inside the card */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Light shadow for 3D effect */
+        text-align: center; /* Centers text inside the card */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation on hover for scaling and shadow */
+        position: auto; /* Position relative to allow for absolute positioning inside */
+        width: 90%; /* Ensures the card takes up full width of its grid column */
+        min-height: 200px; /* Ensures that all cards have at least this height */
+        padding: 30px;
+        display: flex; /* Flexbox for inner alignment */
+        flex-direction: column; /* Align content vertically */
+        justify-content: space-between; /* Distributes content evenly inside the card */
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0.5;
+    }
+    
+    
+    .member3-img {
+        overflow: hidden; /* Ensures the image doesn't overflow outside the container */
+        border-radius: 50%; /* Makes the image container circular */
+        width: 150px; /* Sets the width of the image container */
+        height: 150px; /* Sets the height of the image container */
+        margin: 0 auto 20px; /* Centers the image container and adds 20px space below it */
+    }
+    
+    .member3-img img {
+        border: none; /* Ensure no border is added around the image */
+        width: 100%; /* Makes the image fit the container's width */
+        height: 100%; /* Makes the image fit the container's height */
+        object-fit: cover; /* Ensures the image covers the container without stretching */
+        transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+    }
+    
+    
+    .team-card:hover {
+        transform: scale(1.09); /* Slightly enlarges the card on hover */
+        box-shadow: 0 8px 16px rgb(3, 27, 124); /* Darker shadow for a raised effect on hover */
+        cursor: pointer; /* Changes the cursor to a pointer when hovering over the card */
+    }
+    
+      
+    
+    
+    .team-card:hover .member3-img img {
+        transform: scale(1.2); /* Slight zoom-in effect on the image when hovered */
+    }
+    
+    .member3-info h4 {
+        font-size: 1.5em; /* Increases the font size of the member3's name */
+        margin-bottom: 10px; /* Adds space below the name */
+    }
+    
+    .member3-info .span {
+        color: #ff6600; /* Orange color for the role text */
+        margin-bottom: 5px; /* Adds space below the role text */
+        font-weight: bold; /* Makes the role text bold */
+    }
+    
+    .member3-info p {
+        text-align: center;
+        color: #044fdbd6; /* Dark gray color for the text */
+    }
+    
+    .social-icons a {
+        color: #333; /* Dark color for the social media icons */
+        margin: 0 10px; /* Adds space of 10px to the left and right of each icon */
+        font-size: 1.2em; /* Increases the size of the social media icons */
+        transition: color 0.3s ease; /* Smooth transition when changing the icon color on hover */
+    }
+    
+    .social-icons a:hover {
+        color: #043fb4; /* Changes the icon color to orange on hover */
+        
+    }
+    .ficon{
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Modified the icons */
+    .socialmedia{
+      margin-left: 5px;
+      transition: 0.5s;
+    }
+      .socialmedia:hover{
+        transform: translateY(-15px);
+      }
+    
+    .container_new_4{
+        align-items: center;
+        padding: 1%;
+        color: #333;
+        position: relative;
+        margin: 0 5% 0 5%;
+        background: #ffffff;
+        box-shadow: 0 15px 36px 0 rgba(4, 6, 10, 0.14);}
+    
+        </style>
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/AERO/logo aero.png" alt="" >
+        <!-- Uncomment the line below if you also wish to use an text logo -->
+        <!-- <h1 class="sitename"></h1>  -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home<br></a></li>
+          <li><a href="#mentors">Projects</a></li>
+          <li><a href="speaker-details.html">Pioneer</a></li>
+          <li><a href="#venue">Events</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li class="dropdown"><a href="Achievements.html"><span>Achivements</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+          <li><a href='Contact.html' class="active">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="cta-btn d-none d-sm-block" href="#buy-tickets">Buy Tickets</a>
+
+    </div>
+  </header>
+
+ 
+    
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+        <div class="container position-relative">
+          <h1>Our mentors</h1>
+        <p></p>
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li class="current">Contact us</li>
+            </ol>
+          </nav>
+        </div>
+      </div><!-- End Page Title -->
+
+      <main class="main">
+
+        <!-- ======= Team Section ======= -->
+        <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+            <div class="outer-box">  <div class="container_new_4">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch"></div>
+              
+              
+              <div class="container_new" id="2022-26BATCH" >
+              <center><h2>2022-26 BATCH</h2></center></div>
+              <div class="row">
+      
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch ">
+                  <div class="team-card member3">
+                      <div class="member3-img">
+                          <img src="../img/team/Rithesh Shetty-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                      </div>
+                      <div class="member3-info">
+                          <h4>Rithesh Shetty</h4>
+                          <p class="role">President</p>
+                          <span>MECHANICAL ENGINEERING</span>
+                          <div class="social-icons">
+                              <a href="https://www.linkedin.com/in/rithesh-shetty-37b62424b/"><i class="icofont-linkedin"></i></a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="team-card member3">
+                    <div class="member3-img">
+                        <img src="../img/team/Anantha Krishna-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                    </div>
+                    <div class="member3-info">
+                        <h4>Anantha Krishna</h4>
+                        <p class="role">Software Head</p>
+                        <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/anantha-krishna-93590023a/"><i class="icofont-linkedin"></i></a>
+                            <!--<a href="https://www.instagram.com/anantha_krishna_404/"><i class="icofont-instagram"></i></a>-->
+      
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="team-card member3">
+                  <div class="member3-img">
+                      <img src="../img/team/Pratheeksha Nayak-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                  </div>
+                  <div class="member3-info">
+                      <h4>Pratheeksha Nayak</h4>
+                      <p class="role">Social Media Head</p>
+                      <span>INFORMATION SCIENCE ENGINEERING</span>
+                      <div class="social-icons">
+                          <a href="https://www.linkedin.com/in/pratheeksha-nayak-49a24424a/"><i class="icofont-linkedin"></i></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Ranjith R Bhandary-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Ranjith R Bhandary</h4>
+                    <p class="role">Inventory, Competition in-charge Head</p>
+                    <span>ROBOTICS AND ARTIFICIAl INTELLIGENCE ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/ranjith-r-bhandary-228015250/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Sathvik Poojary-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Sathwik Poojary</h4>
+                  <p class="role">Tools and Workshop Head, Competition in-charge</p>
+                  <span>ROBOTICS AND ARTIFICIAL INTELLIGENCE  ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/sathvik-poojary-1126a3274/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="team-card member3">
+            <div class="member3-img">
+                <img src="../img/team/Vachan Narkodu-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+            </div>
+            <div class="member3-info">
+                <h4>Vachan Narkodu</h4>
+                <p class="role">Inventory Head</p>
+                <span>MECHANICAL ENGINEERING</span>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/vachan-narkodu-1805a324b/"><i class="icofont-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="team-card member3">
+            <div class="member3-img">
+                <img src="../img/team/Nidheesh-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+            </div>
+            <div class="member3-info">
+                <h4>Nidheesh Poojary</h4>
+                <p class="role">Tools and Workshop Head</p>
+                <span>ROBOTICS AND ARTIFICIAL INTELLIGENCE ENGINEERING</span>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/nidheesh-poojary-702333283/"><i class="icofont-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="team-card member3">
+            <div class="member3-img">
+                <img src="../img/team/Shravya A Prabhu-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+            </div>
+            <div class="member3-info">
+                <h4>Shravya P</h4>
+                <p class="role">Documentation Head</p>
+                <span>INFORMATION SCIENCE ENGINEERING</span>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/shravya-a-prabhu-4a2150247/"><i class="icofont-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="team-card member3">
+            <div class="member3-img">
+                <img src="../img/team/Manoj Gowda-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+            </div>
+            <div class="member3-info">
+                <h4>Manoj Gowda</h4>
+                <p class="role">Marketing Head</p>
+                <span>MECHANICAL ENGINEERING</span>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/manoj-gowda-796022285/"><i class="icofont-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="team-card member3">
+            <div class="member3-img">
+                <img src="../img/team/M Deepa Bhat-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+            </div>
+            <div class="member3-info">
+                <h4>Deepa Bhat</h4>
+                <p class="role">Finance Head</p>
+                <span>MECHANICAL ENGINEERING</span>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/m-deepa-bhat-23822b275/"><i class="icofont-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="team-card member3">
+            <div class="member3-img">
+                <img src="../img/team/Sanjana S-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+            </div>
+            <div class="member3-info">
+                <h4>Sanjana S</h4>
+                <p class="role">Marketing and Recruitment Head</p>
+                <span>INFORMATION SCIENCE ENGINEERING</span>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/sanjana-s-4780a5276/"><i class="icofont-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+        
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="team-card member3">
+            <div class="member3-img">
+                <img src="../img/team/J Juvita Joshma-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+            </div>
+            <div class="member3-info">
+                <h4>J Juvita Joshma</h4>
+                <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/juvita-joshma-802363289/"><i class="icofont-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="./img/team/Amrutha-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Amritha K</h4>
+                  <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/amritha-k-poojari-62559524b/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+        </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="assets\img\team\VAISHNAVI.jpg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Vaishnavi A Ganiga</h4>
+                  <span>MECHANICAL ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/vaishnavi-a-ganiga-32bb91251/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+        </div> 
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch"></div>
+      <div class="container_new" id="2023-27BATCH" >
+        <center><h2>2023-27 BATCH</h2></center></div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Gagandeep Kayara Gangadhara-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Gagandeep Kayara Gangadhara</h4>
+                    <p class="role">Vice-President</p>
+                    <span>MECHANICAL ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/gagandeep-kayara-gangadhara-a718a12aa/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Shreyas-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Shreyas</h4>
+                    <span>ROBOTICS AND ARTIFICIAL INTELLIGENCE ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/shreyas-210782309/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Meghraj M-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Meghraj M</h4>
+                    <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/meghraj-m-04713a28b/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Samruddha S Aithal-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Samruddha S Aithal</h4>
+                    <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/samruddha-aithal-bb1549314/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Sampanna-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Sampanna Shetty</h4>
+                    <span>ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/sampanna-shetty-0299b2287/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Sujan S-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Sujan S</h4>
+                    <span>COMPUTER SCIENCE AND ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/sujan-s-74b61b288/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Aneesh Prabhu-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Aneesh Prabhu</h4>
+                    <span>ARTIFICIAL INTELLIGENCE AND DATA SCIENCE ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/aneesh-prabhu-5720422a7/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Shainil S Shetty-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Shainil S Shetty</h4>
+                    <span>MECHANICAL ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/shainil-s-shetty-0a810927b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Prajwal B T-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Prajwal Badivana</h4>
+                    <span>INFORMATION SCIENCE ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/prajwalbadivana?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Vinod S Shanbogue-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Vinod S Shanbogue</h4>
+                    <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/vinod-s-shanbogue-268250320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Nishanth Prabhu-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Nishanth Prabhu</h4>
+                    <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/nishanthprabhunishanth?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Abhijna Laxmi-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Abhijna</h4>
+                    <span>ELECTRONICS VLSI DESIGN AND TECHNOLOGY ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/abhijna-laxmi-659143298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Sangeetha J-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Sangeetha</h4>
+                    <span>COMPUTER SCIENCE (FULL STACK DEVELOPMENT) ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/sangeetha-j-940549294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Daivik Shetty-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Daivik Shetty</h4>
+                    <span>MECHANICAL ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/daivik-shetty-0a2009284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Shishir D-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Shishir D</h4>
+                    <span>COMPUTER SCIENCE AND ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/shishir-d-85219a28b"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Bhanushankar Ganapathi Bhat-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Bhanushankar</h4>
+                  <span>ELECTRONICS VLSI DESIGN AND TECHNOLOGY ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/bhanushankar-ganapati-bhat-535856296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Vasavi Joshi-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Vasavi Joshi</h4>
+                  <span>COMPUTER AND COMMUNICATION ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/vasavi-joshi-9298b1290"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Srinidhi D S-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Srinidhi DS</h4>
+                  <span>INFORMATION SCIENCE ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/srinidhids?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Chinmay Kulkarni-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Chinmay K</h4>
+                  <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/chinmay-kulkarni-6873b62b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Prashith R Shetty-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Prashith Shetty</h4>
+                  <span>COMPUTER SCIENCE AND ENGINEERING (CYBER SECURITY) </span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/posts/prashith-shetty-a91508244_cyberinsight-cybersecurity-proton-activity-7238143150706282496-BZlo?utm_source=share&utm_medium=member3_android"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Bhoomika-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Bhoomika</h4>
+                  <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/bhoomika-paradkar-a14b41306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Abhyudaya J-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Abhyudaya J</h4>
+                  <span>COMPUTER SCIENCE AND ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/abhyudaya-j-acharya-ab0307280/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch"></div>
+      <div class="container_new" id="2021-25BATCH"> <center><h2>2021-25 BATCH</h2></center></div> 
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Divyamshu-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Divyamshu YN</h4>
+                  <span>ELETRICAL AND ELECTRONICS ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/divyamshu-yn-82696324b/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Sharanya-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Sharanya Acharya</h4>
+                  <span> INFORMATION SCIENCE AND ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/sharanya-acharya-90a262264/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Hardhika-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Hardhika U</h4>
+                  <span>BIOTECHNOLOGY ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/hardhika-u-297262262/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Sanketh-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Sanketh K.K</h4>
+                  <span>ROBOTICS AND ARTIFICIAL INTELLIGENCE ENGINEERING </span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/sanketh-k-k-59773722a/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Abhiram-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>N S K Abhiram</h4>
+                  <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/n-s-k-abhiram-439340226/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Suhana S Shetty-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Suhana S Shetty</h4>
+                  <span>COMPUTER AND COMMUNICATION ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/suhana-s-shetty-3b9a2021b/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Navraj-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Navraj D Shetty</h4>
+                  <span>COMPUTER SCIENCE AND ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/navaraj-shetty-86978b298/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/P V Mithra-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Pannagesha Vishwa Mithra</h4>
+                  <span>MECHANICAL ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/pannagesha-vishwa-mithra-949762252/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="team-card member3">
+              <div class="member3-img">
+                  <img src="../img/team/Pradeep-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+              </div>
+              <div class="member3-info">
+                  <h4>Pradeep B</h4>
+                  <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                  <div class="social-icons">
+                      <a href="https://www.linkedin.com/in/pradeep-b-jakkanagoudra-87a64b22a/"><i class="icofont-linkedin"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch"></div>
+      
+      
+      <div class="container_new" id="2020-24BATCH" >
+        <center><h2>2020-24 BATCH</h2></center></div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Nishmitha.jpeg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>K Nishmitha Pai</h4>
+                    <span>MECHANICAL ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/nishmitha-pai-713b54208"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/chinmaya.jpg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Chinmaya Shyamaraj</h4>
+                    <span>COMPUTER SCIENCE AND ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/chinmaya-shyamaraj-176b19163"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/padmashree2.jpg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Padmashree PV</h4>
+                    <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/pv-padmashree/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Deeksha Bhat2.jpg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Deeksha</h4>
+                    <span>ELETRICAL AND ELECTRONICS ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/deeksha-792250211"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/suchitra3.jpg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Suchitra Pai</h4>
+                    <span>BIOTECHNOLOGY ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/suchitra-pai-9a9466209/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="..\img\team\Gagan24.jpg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Gagan Nayak</h4>
+                    <span>COMPUTER SCIENCE AND ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/gagan-nayak-12922920b/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/AditiAcharya.jpeg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Aditi Acharya</h4>
+                    <span>ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/aditipraveenacharya/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Nishmitha.jpg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Nishmitha</h4>
+                    <span>ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/nishmitha-bhandary-59065b221/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/rathan1.jpg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Rathan Raj</h4>
+                    <span>MECHANICAL ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/rathan-raj-0b2178229/"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="team-card member3">
+                <div class="member3-img">
+                    <img src="../img/team/Aditya Bhat1.jpeg" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                </div>
+                <div class="member3-info">
+                    <h4>Aditi Bhat</h4>
+                    <span>ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING ENGINEERING</span>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/aditi-bhat-850b56208"><i class="icofont-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch"></div>
+      
+      <!-- Teamwork Quote Section -->
+      <div class="col-lg-12 d-flex align-items-stretch justify-content-center">
+          <div style="border: 2px solid rgba(0, 0, 0, 0.05); padding: 20px; max-width: 800px; text-align: center; background-color: rgba(225, 229, 233, 0.47);">
+            <h5 style="font-weight: bold; background: linear-gradient(to right, #0212f4, #07ece9); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">"Coming together is a beginning, Keeping together is progress, Working together is success." 
+      
+            </h5>
+          </div>
+        </div>
+        
+      <div class="col-lg-4 col-md-6 d-flex align-items-stretch"></div>
+      
+      
+      
+      
+                    </div>
+                  </div>
+                </div>
+      
+              </div>
+      
+            </div>
+            </div>
+          </section><!-- End Team Section -->
+    
+        </main><!-- End #main -->
+        
+      
+        <footer id="footer" class="footer dark-background">
+
+            <div class="footer-top">
+              <div class="container">
+                <div class="row gy-4">
+                  <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                      <span class="sitename">Aeroclub Nitte</span>
+                    </a>
+                    <div class="footer-contact pt-3 mb-4">
+                      <p>3rd Floor V.Raja Raman Block
+                        <br>
+                        NMAM Institute of Technology
+                        <br>
+                        Karkala, Udupi
+                        <br>
+                         Karnataka -574110</p>
+                      <p class="mt-3"><strong>President:</strong> <span>+919731477827 (Rithesh Shetty)
+                        <br>
+                        <p><strong>Vice President:</strong> <span>+91876292217 (Gagandeep Kayara)
+                          <br>
+                        </span></p>
+                      <div class="pt-2"> 
+                        <p><strong>Email:</strong> <span>aeroclubnitte.nmamit@nitte.edu.in</span></p>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="copyright text-center">
+              <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+        
+                <div class="d-flex flex-column align-items-center align-items-lg-start">
+                  <div>
+                    © Copyright <strong><span>Aeroclub Nitte</span></strong>. All Rights Reserved | <a href="privacy.html" style="color: blue; text-decoration: underline;" target="_blank">Privacy Policy</a>
+                  </div>
+                  
+                </div>
+        
+                <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+                  <a href=""><i class="bi bi-twitter-x"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+        
+              </div>
+            </div>
+        
+          </footer>
+        
+          <!-- Scroll Top -->
+          <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+        
+          <!-- Preloader -->
+          <div id="preloader"></div>
+        
+          <!-- Vendor JS Files -->
+          <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <script src="assets/vendor/php-email-form/validate.js"></script>
+          <script src="assets/vendor/aos/aos.js"></script>
+          <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+          <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        
+          <!-- Main JS File -->
+          <script src="assets/js/main.js"></script>
+        
+        </body>
+        
+        </html>
