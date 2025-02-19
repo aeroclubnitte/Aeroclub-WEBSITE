@@ -1268,7 +1268,10 @@ section,
 .hotels .card .card-img .content p{
   color: #fff;
   position: absolute;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
 }
 .hotels .card:hover .content{
   justify-content: center;
