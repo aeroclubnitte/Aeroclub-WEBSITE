@@ -23,8 +23,16 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main CSS File -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <link href="assets/css/main.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -34,6 +42,478 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+    .container_new {
+      align-items: center;
+      padding: 1%;
+      color: #c0c0c0;
+      position: relative;
+      margin: 0 5% 0 5%;
+      background:white;
+      box-shadow: 0 15px 36px 0 rgba(4, 6, 10, 0.14);
+      top: -75px;
+  
+  }
+  .team-section {
+    text-align: center;
+    padding: 10px;
+  }
+  @media (max-width: 1200px) {
+    .team-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 member3s per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 member3s per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-container {
+        grid-template-columns: 4fr; /* 1 member3 per row on very small screens */
+    }
+}
+/* Styling for mentors linkedin */
+
+.slider .card .member .social {
+  position: absolute;
+  left: 0;
+  bottom: -40px;
+  right: 0;
+  height: 40px;
+  opacity: 0;
+  transition: bottom ease-in-out 0.4s;
+  text-align: center;
+  background: rgba(113, 118, 121, 0.8);
+}
+
+.slider .card .member .social a {
+  transition: color 0.3s;
+  color: #fff;
+  margin: 0 10px;
+  padding-top: 8px;
+  display: inline-block;
+}
+
+.slider .card .member .social a:hover {
+  color: #68a4c4;
+}
+
+.slider .card .member .img .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+.slider .member:hover .social {
+  bottom: 0;
+  opacity: 1;
+  transition: bottom ease-in-out 0.4s;
+}
+
+.slider .card .member .member-info h4 {
+  font-weight: 700;
+  margin: 15px 0 5px 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.slider .card .member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.slider .card .member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #666;
+}
+.member-img img{
+  padding: 5px;
+  border-radius: 20px;
+}
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin: 15px 0 5px 0;
+  font-size: 18px;
+  text-align: center;
+  color: red;
+}
+
+.team .member .member-info span {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.team .member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  text-align: #666;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  /* Ensure the entire pop-up is scrollable */
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  max-height: 80vh;
+  /* Set a maximum height for the content */
+  overflow-y: auto;
+  /* Make the content scrollable */
+}
+
+.popup h2 {
+  color: #333;
+}
+
+.popup p {
+  color: #555;
+}
+
+.popup ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.popup button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #555;
+}
+
+/* Close button style */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #333;
+}
+.portfolio-info {
+position: relative;
+cursor: pointer;
+}
+
+.portfolio-info .tooltip {
+position: relative;
+bottom: 0; /* Set bottom to 0 */
+left: 50%;
+transform: translate(-50%, 7px); /* Adjust the second value to set the distance between the image and tooltip */
+display: none;
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+background-color: #fff;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+padding: 20px;
+z-index: 9999;
+max-width: 800px;
+max-height: 500px;
+overflow: auto;
+}
+
+
+
+.portfolio-info:hover .tooltip {
+display: block;
+opacity: 1;
+overflow: auto;
+}
+@media (max-width: 768px) {
+.row {
+  flex-direction: column;
+}
+
+.col-md-6 {
+  order: 2;
+  text-align: center;
+}
+
+.col-md-6 .text-md-right {
+  justify-content: center;
+  display: inline-flex;
+  text-align: center;
+  margin-top: 30px; /* Adjust top margin as needed for more space */
+}
+}
+.col-md-6 {
+padding-top: 20px; /* Adjust the value according to your preference */
+}
+/* Modified the icons */
+.socialmedia{
+margin-left: 5px;
+transition: 0.5s;
+}
+.socialmedia:hover{
+transform: translateY(-15px);
+}
+.headingAc{
+padding: 1%;
+position: relative;
+margin: 0 5% 0 5%;
+background: #75a0b0;
+box-shadow: 0 15px 36px 0 rgba(4, 6, 10, 0.14);
+width: 90%;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 5px;
+}
+/* Pop-up styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  /* Ensure the entire pop-up is scrollable */
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  max-height: 80vh;
+  /* Set a maximum height for the content */
+  overflow-y: auto;
+  /* Make the content scrollable */
+}
+
+.popup h2 {
+  color: #333;
+}
+
+.popup p {
+  color: #4e79a4;
+}
+
+.popup ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.popup button {
+  background-color: #333;
+  color: #2676c2cb;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup button:hover {
+  background-color: #4580ad;
+}
+
+/* Close button style */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #555555;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #4e3333;
+}
+/* Dropdown styles */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropbtn {
+background-color: #008cba;
+color: white;
+padding: 14px 16px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.642);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: rgb(0, 0, 0);
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+
+.dropdown-content a:hover {
+background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown:hover .dropbtn {
+background-color: #005f73;
+}
+
+@media (max-width: 1200px) {
+.team-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 member3s per row on medium screens */
+}
+}
+
+@media (max-width: 768px) {
+.team-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 member3s per row on smaller screens */
+}
+}
+
+@media (max-width: 480px) {
+.team-container {
+    grid-template-columns: 4fr; /* 1 member3 per row on very small screens */
+}
+}
+
+
+.col-md-6 {
+padding-top: 20px; /* Adjust the value according to your preference */
+}
+html {
+      scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Montserrat";
+
+background: linear-gradient(#ffffff,#016fa5);
+}
+    
+    
+    /* Wrapper for background image and content */
+    .background-wrapper 
+    {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Adjust height as needed */
+    }
+    
+    /* Semi-transparent overlay */
+    .background-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(0deg, rgba(206, 209, 209, 0), rgba(11, 84, 221, 0)); /* Adjust colors and opacity */
+        z-index: 1;
+    }
+    .background-wrapper > * {
+       position: relative;
+        z-index: 2;
+      }
+    /* Content on top of the background */
+    .content {
+        position: relative;
+        z-index: 2;
+        color: rgba(38, 38, 174, 0.649); /* Text color */
+        padding: 20px;
+        text-align: center;
+    }
+    .team-section {
+text-align: center;
+padding: 10px;
+}
+.socials{
+position: absolute;
+left: 0;
+bottom: -40px;
+right: 0;
+height: 40px;
+opacity: 0;
+transition: bottom ease-in-out 0.4s;
+text-align: center;
+background: rgba(113, 118, 121, 0.8);
+
+}
+.socials a{
+transition: color 0.3s;
+color: #fff;
+margin: 0 10px;
+width: 20px;
+height: 20px;
+padding-top: 8px;
+display: inline-block;
+
+}
+
+.img-blur:hover .socials{
+bottom: 0;
+opacity: 1;
+
+}
+.socials a:hover{
+color: #68a4c4;
+}
+  </style>
 </head>
 
 <body class="speaker-details-page">
@@ -139,119 +619,160 @@
       <br>
       <br>
 
-      <h2 style="text-align: center;"><b>OUR PILLARS OF SUPPORT</b></h2>
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <img src="assets/img/AERO/mentors/deekshith.png" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4><a href="speaker-details.html">Deekshith</a></h4>
-                  <span>System Engineer
-                    <br>
-                    Karman Drones
-                  </span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <img src="assets/img/AERO/mentors/harshirtha.png" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4><a href="speaker-details.html">Harshitha</a></h4>
-                  <span>Paid Media Executive
-                    <br>
-                    The Ascot group, UK
-                  </span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <img src="assets/img/AERO/mentors/karthik.png" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4><a href="speaker-details.html">karthik</a></h4>
-                  <span>Senior Executive
-                    <br>
-                    TATA Aerospace & Defence</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <img src="assets/img/AERO/mentors/ankith.png" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4><a href="speaker-details.html">Ankith</a></h4>
-                  <span>SDE-II OCI
-                    <br>
-                    Oracle</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <img src="assets/img/AERO/mentors/sushmitha.png" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4><a href="speaker-details.html">sushmitha</a></h4>
-                  <span>DSE
-                    <br>
-                    JFROG</span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-              <img src="assets/img/AERO/mentors/aman.png" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4><a href="speaker-details.html">Aman</a></h4>
-                  <span>UAV Design Engineer & Test pilot
-                    <br>
-                    Blue Infinity Innovation labs
-                  </span>
-                </div>
-                <div class="social">
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
-
-      </div>
+      <section class="features">
+        <div class="container_new">
+            <h1 class="section-title" style="font-size: 3vh; color: rgba(1, 1, 66, 0.887);font-style: 'Montserrat' ; text-align:left ; ">
+                <h2 style="width: 100%; text-align: center !important;     font-family: var(--heading-font);"><strong style="    font-family: var(--heading-font);">PILLARS OF SUPPORT</strong></h2> 
+            </h1>
+            <section class="team" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+                <div class="outer-box">  
+                  
+                    
+                <div class="slider owl-carousel">
+                   <div class="card">
+                       <div class="member">
+                         <div class="member-img">
+                           <img src="assets/img/AERO/mentors/karthik.png"  style="height: 314px; width: 466px;" class="img-fluid" alt="">
+                           <div class="social">
+                            <a href="https://www.linkedin.com/in/karthik-badanidiyoor/"><i class="bi bi-linkedin"></i></a>
+                             
+                           </div>
+                         </div>
+                         <div class="member-info">
+                           <h4>Mr. Karthik B</h4>
+                           <span>Senior executive
+                             <br>Tata Aerospace and Defense</span>
+                           <br><br>
+                         </div>
+                       </div>
+                     </div>
+           
+                     <div class="card">
+                       <div class="member">
+                         <div class="member-img">
+                           <img src="assets/img/AERO/mentors/harshirtha.png" style="height: 314px; width: 466px;" class="img-fluid" alt="">
+           
+                           <div class="social">
+                            <a href="https://www.linkedin.com/in/harshitha-g-suresh"><i class="bi bi-linkedin"></i></a>
+                            
+                           </div>
+                         </div>
+           
+                         <div class="member-info">
+                           <h4>Ms. Harshitha GS</h4>
+                           <span>performance Marketing Strategist<br>Purplex, UK<br><br><br></span>
+           
+                         </div>
+                       </div>
+                     </div>
+           
+                     <div class="card">
+                       <div class="member">
+                         <div class="member-img">
+                           <img src="assets/img/AERO/mentors/ankith.png" style="height: 314px; width: 466px;" class="img-fluid" alt="">
+                           <div class="social">
+                            <a href="https://www.linkedin.com/in/ankith-bhandary-1b5234193/"><i class="bi bi-linkedin"></i></a>
+                          
+                           </div>
+                         </div>
+                         <div class="member-info">
+                          <h4>Mr. Ankith Bhandary</h4>
+                           <span>Software Development<br> Engineer-2
+                             <br>OCI, Oracle<br><br></span>
+                         </div>
+                       </div>
+                     </div>
+           
+                     <div class="card">
+                       <div class="member">
+                         <div class="member-img">
+                           <img src="assets/img/AERO/mentors/sushmitha.png" style="height: 314px; width: 466px;" class="img-fluid" alt="">
+                           <div class="social">
+                            <a href="https://www.linkedin.com/in/sushmita-s-shetty-125214180"><i class="bi bi-linkedin"></i></a>
+                            
+                           </div>
+                         </div>
+                         <div class="member-info">
+                           <h4>Ms. Sushmita S Shetty</h4>
+                           <span>DevSecOps Engineer <br>Jfrog<br><br><br></span>
+           
+                         </div>
+                       </div>
+                     </div>
+           
+           
+                     <div class="card">
+                       <div class="member">
+                         <div class="member-img">
+                           <img src="assets/img/AERO/mentors/deekshith.png" style="height: 314px; width: 466px;" class="img-fluid" alt="">
+                           <div class="social">
+                            <a href="https://www.linkedin.com/in/deekshith-prabhu-1888ba212/"><i class="bi bi-linkedin"></i></a>
+                             
+                           </div>
+                         </div>
+                         <div class="member-info">
+                           <h4>Mr. Deekshith Prabhu</h4>
+                           <span>System Engineer<br>Karman Drones<br><br><br></span>
+           
+                         </div>
+                       </div>
+                     </div>
+                     
+                     <div class="card">
+                       <div class="member">
+                         <div class="member-img">
+                           <img src="assets/img/AERO/mentors/aman.png" style="height: 314px; width: 466px;" class="img-fluid" alt="">
+                           <div class="social">
+                            <a href="https://www.linkedin.com/in/aman-kumar-srivastav-544591202/"><i class="bi bi-linkedin"></i></a>
+                          
+                           </div>
+                         </div>
+                         <div class="member-info">
+                           <h4>Mr. Aman Kumar </h4>
+                          <span>UAV Design Engineer & Test Pilot<br>blueINFINITY <br>Innovation Labs<br><br></span>
+           
+                         </div>
+                       </div>
+                     </div>
+           
+           
+                    
+                   </div>
+           
+                   
+           
+                   <script>
+                     $(".slider").owlCarousel({
+                       loop: true,
+                       autoplay: true,
+                       autoplayTimeout: 1000, //1000ms = 1s;
+                       responsiveClass: true,
+                       responsive: {
+                         0: {
+                           items: 1,
+                           nav: true
+                         },
+                         600: {
+                           items: 3,
+                           nav: true
+                         },
+                         1000: {
+                           items: 5,
+                           nav: true,
+                           loop: true
+                         }
+                       },
+           
+                       autoplayHoverPause: true,
+                     });
+                   </script>
+           
+           
+                 </div>
+                 </div>
+           
+                 </div>
+              </section><!-- End Why Us Section -->
 
     </section><!-- /Events Section -->
 
@@ -362,6 +883,7 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
