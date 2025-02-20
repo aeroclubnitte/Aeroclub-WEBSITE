@@ -286,10 +286,10 @@
     
     .team-card {
         
-        background-color: rgba(9, 5, 139, 0.267); /* Powder blue */
+        background-color: rgba(9, 5, 139, 0); /* Powder blue */
         border-radius: 20px; /* Rounds the corners of the card */
         padding: 20px; /* Adds space inside the card */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0); /* Light shadow for 3D effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.507); /* Light shadow for 3D effect */
         text-align: center; /* Centers text inside the card */
         transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation on hover for scaling and shadow */
         position: auto; /* Position relative to allow for absolute positioning inside */
@@ -301,7 +301,6 @@
         justify-content: space-between; /* Distributes content evenly inside the card */
         margin-left: auto;
         margin-right: auto;
-        opacity: 0.5;
     }
     
     
@@ -311,6 +310,8 @@
         width: 150px; /* Sets the width of the image container */
         height: 150px; /* Sets the height of the image container */
         margin: 0 auto 20px; /* Centers the image container and adds 20px space below it */
+        border: 1px solid #7b7b7ba6; /* Light gray border around the image */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a raised effect */
     }
     
     .member3-img img {
@@ -324,7 +325,7 @@
     
     .team-card:hover {
         transform: scale(1.09); /* Slightly enlarges the card on hover */
-        box-shadow: 0 8px 16px rgb(3, 27, 124); /* Darker shadow for a raised effect on hover */
+        box-shadow: 0 8px 16px rgb(248,34,73); /* Darker shadow for a raised effect on hover */
         cursor: pointer; /* Changes the cursor to a pointer when hovering over the card */
     }
     
@@ -338,6 +339,7 @@
     .member3-info h4 {
         font-size: 1.5em; /* Increases the font size of the member3's name */
         margin-bottom: 10px; /* Adds space below the name */
+        color: #fe002f;
     }
     
     .member3-info .span {
@@ -348,11 +350,11 @@
     
     .member3-info p {
         text-align: center;
-        color: #044fdbd6; /* Dark gray color for the text */
+        color: #000000d6; /* Dark gray color for the text */
     }
     
     .social-icons a {
-        color: #333; /* Dark color for the social media icons */
+        color: #F82249; /* Dark color for the social media icons */
         margin: 0 10px; /* Adds space of 10px to the left and right of each icon */
         font-size: 1.2em; /* Increases the size of the social media icons */
         transition: color 0.3s ease; /* Smooth transition when changing the icon color on hover */
@@ -391,52 +393,53 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/AERO/logo aero.png" alt="" >
-        <!-- Uncomment the line below if you also wish to use an text logo -->
-        <!-- <h1 class="sitename"></h1>  -->
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home<br></a></li>
-          <li><a href="#mentors">Projects</a></li>
-          <li><a href="speaker-details.html">Pioneer</a></li>
-          <li><a href="#venue">Events</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li class="dropdown"><a href="Achievements.html"><span>Achivements</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center">
+    
+          <a href="index.html" class="logo d-flex align-items-center me-auto">
+            <img src="assets/img/AERO/logo aero.png" alt="" >
+            <!-- Uncomment the line below if you also wish to use an text logo -->
+            <!-- <h1 class="sitename"></h1>  -->
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
             <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              <li><a href="index.html" >Home<br></a></li>
+              <li><a href="Projects.html">Projects</a></li>
+              <li><a href="Pioneer.html">Pioneer</a></li>
+              <li><a href="Event.html">Events</a></li>
+              <li><a href="team.html"class="active">Team</a></li>
+              <li><a href="index.html#gallery">Gallery</a></li>
+              <li class="dropdown"><a href="Achievements.html"><span>Achivements</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="/Achievements.html#2025">2025</a></li>
+                  <li><a href="/Achievements.html#2024">2024</a></li>
+                  <li><a href="/Achievements.html#2023">2023</a></li>
+                  <li><a href="/Achievements.html#2022">2022</a></li>
+                  <li><a href="/Achievements.html#2018-19">2018-19</a></li>
+                </ul>
+              </li>
+              <li><a href='Contact.html'>Contact</a></li>
             </ul>
-          </li>
-          <li><a href='Contact.html' class="active">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="cta-btn d-none d-sm-block" href="#buy-tickets">Buy Tickets</a>
-
-    </div>
-  </header>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+    
+          <a class="cta-btn d-none d-sm-block" href="https://forms.gle/fM6JF3CLf5JmAYor5">Register Now </a>
+    
+        </div>
+      </header>
 
  
     
     <!-- Page Title -->
     <div class="page-title" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
         <div class="container position-relative">
-          <h1>Our mentors</h1>
+          <h1>Our Team</h1>
         <p></p>
           <nav class="breadcrumbs">
             <ol>
               <li><a href="index.html">Home</a></li>
-              <li class="current">Contact us</li>
+              <li class="current">Team</li>
             </ol>
           </nav>
         </div>
@@ -457,14 +460,14 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch ">
                   <div class="team-card member3">
                       <div class="member3-img">
-                          <img src="../img/team/Rithesh Shetty-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                          <img src="assets/img/AERO/AERO CLUB core/Rithesh Shetty-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
                       </div>
                       <div class="member3-info">
                           <h4>Rithesh Shetty</h4>
                           <p class="role">President</p>
                           <span>MECHANICAL ENGINEERING</span>
                           <div class="social-icons">
-                              <a href="https://www.linkedin.com/in/rithesh-shetty-37b62424b/"><i class="icofont-linkedin"></i></a>
+                              <a href="https://www.linkedin.com/in/rithesh-shetty-37b62424b/"><i class="bi bi-linkedin"></i></a>
                           </div>
                       </div>
                   </div>
@@ -479,7 +482,7 @@
                         <p class="role">Software Head</p>
                         <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                         <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/anantha-krishna-93590023a/"><i class="icofont-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/anantha-krishna-93590023a/"><i class="bi bi-linkedin"></i></a>
                             <!--<a href="https://www.instagram.com/anantha_krishna_404/"><i class="icofont-instagram"></i></a>-->
       
                         </div>
@@ -496,7 +499,7 @@
                       <p class="role">Social Media Head</p>
                       <span>INFORMATION SCIENCE ENGINEERING</span>
                       <div class="social-icons">
-                          <a href="https://www.linkedin.com/in/pratheeksha-nayak-49a24424a/"><i class="icofont-linkedin"></i></a>
+                          <a href="https://www.linkedin.com/in/pratheeksha-nayak-49a24424a/"><i class="bi bi-linkedin"></i></a>
                       </div>
                   </div>
               </div>
@@ -511,7 +514,7 @@
                     <p class="role">Inventory, Competition in-charge Head</p>
                     <span>ROBOTICS AND ARTIFICIAl INTELLIGENCE ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/ranjith-r-bhandary-228015250/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/ranjith-r-bhandary-228015250/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -526,7 +529,7 @@
                   <p class="role">Tools and Workshop Head, Competition in-charge</p>
                   <span>ROBOTICS AND ARTIFICIAL INTELLIGENCE  ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/sathvik-poojary-1126a3274/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/sathvik-poojary-1126a3274/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -541,7 +544,7 @@
                 <p class="role">Inventory Head</p>
                 <span>MECHANICAL ENGINEERING</span>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/vachan-narkodu-1805a324b/"><i class="icofont-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/vachan-narkodu-1805a324b/"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -556,7 +559,7 @@
                 <p class="role">Tools and Workshop Head</p>
                 <span>ROBOTICS AND ARTIFICIAL INTELLIGENCE ENGINEERING</span>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/nidheesh-poojary-702333283/"><i class="icofont-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/nidheesh-poojary-702333283/"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -571,7 +574,7 @@
                 <p class="role">Documentation Head</p>
                 <span>INFORMATION SCIENCE ENGINEERING</span>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/shravya-a-prabhu-4a2150247/"><i class="icofont-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/shravya-a-prabhu-4a2150247/"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -587,7 +590,7 @@
                 <p class="role">Marketing Head</p>
                 <span>MECHANICAL ENGINEERING</span>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/manoj-gowda-796022285/"><i class="icofont-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/manoj-gowda-796022285/"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -602,7 +605,7 @@
                 <p class="role">Finance Head</p>
                 <span>MECHANICAL ENGINEERING</span>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/m-deepa-bhat-23822b275/"><i class="icofont-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/m-deepa-bhat-23822b275/"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -617,7 +620,7 @@
                 <p class="role">Marketing and Recruitment Head</p>
                 <span>INFORMATION SCIENCE ENGINEERING</span>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/sanjana-s-4780a5276/"><i class="icofont-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/sanjana-s-4780a5276/"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -634,7 +637,7 @@
                 <h4>J Juvita Joshma</h4>
                 <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/juvita-joshma-802363289/"><i class="icofont-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/juvita-joshma-802363289/"><i class="bi bi-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -648,7 +651,7 @@
                   <h4>Amritha K</h4>
                   <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/amritha-k-poojari-62559524b/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/amritha-k-poojari-62559524b/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -662,7 +665,7 @@
                   <h4>Vaishnavi A Ganiga</h4>
                   <span>MECHANICAL ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/vaishnavi-a-ganiga-32bb91251/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/vaishnavi-a-ganiga-32bb91251/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -682,7 +685,7 @@
                     <p class="role">Vice-President</p>
                     <span>MECHANICAL ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/gagandeep-kayara-gangadhara-a718a12aa/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/gagandeep-kayara-gangadhara-a718a12aa/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -696,7 +699,7 @@
                     <h4>Shreyas</h4>
                     <span>ROBOTICS AND ARTIFICIAL INTELLIGENCE ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/shreyas-210782309/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/shreyas-210782309/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -710,7 +713,7 @@
                     <h4>Meghraj M</h4>
                     <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/meghraj-m-04713a28b/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/meghraj-m-04713a28b/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -724,7 +727,7 @@
                     <h4>Samruddha S Aithal</h4>
                     <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/samruddha-aithal-bb1549314/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/samruddha-aithal-bb1549314/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -732,13 +735,13 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="team-card member3">
                 <div class="member3-img">
-                    <img src="../img/team/Sampanna-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                    <img src="assets/img/AERO/AERO CLUB core/Sampanna-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
                 </div>
                 <div class="member3-info">
                     <h4>Sampanna Shetty</h4>
                     <span>ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/sampanna-shetty-0299b2287/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/sampanna-shetty-0299b2287/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -752,7 +755,7 @@
                     <h4>Sujan S</h4>
                     <span>COMPUTER SCIENCE AND ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/sujan-s-74b61b288/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/sujan-s-74b61b288/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -766,7 +769,7 @@
                     <h4>Aneesh Prabhu</h4>
                     <span>ARTIFICIAL INTELLIGENCE AND DATA SCIENCE ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/aneesh-prabhu-5720422a7/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/aneesh-prabhu-5720422a7/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -780,7 +783,7 @@
                     <h4>Shainil S Shetty</h4>
                     <span>MECHANICAL ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/shainil-s-shetty-0a810927b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/shainil-s-shetty-0a810927b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -797,7 +800,7 @@
                     <h4>Prajwal Badivana</h4>
                     <span>INFORMATION SCIENCE ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/prajwalbadivana?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/prajwalbadivana?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -812,7 +815,7 @@
                     <h4>Vinod S Shanbogue</h4>
                     <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/vinod-s-shanbogue-268250320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/vinod-s-shanbogue-268250320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -827,7 +830,7 @@
                     <h4>Nishanth Prabhu</h4>
                     <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/nishanthprabhunishanth?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/nishanthprabhunishanth?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -842,7 +845,7 @@
                     <h4>Abhijna</h4>
                     <span>ELECTRONICS VLSI DESIGN AND TECHNOLOGY ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/abhijna-laxmi-659143298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/abhijna-laxmi-659143298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -858,7 +861,7 @@
                     <h4>Sangeetha</h4>
                     <span>COMPUTER SCIENCE (FULL STACK DEVELOPMENT) ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/sangeetha-j-940549294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/sangeetha-j-940549294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -873,7 +876,7 @@
                     <h4>Daivik Shetty</h4>
                     <span>MECHANICAL ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/daivik-shetty-0a2009284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/daivik-shetty-0a2009284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -903,7 +906,7 @@
                   <h4>Bhanushankar</h4>
                   <span>ELECTRONICS VLSI DESIGN AND TECHNOLOGY ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/bhanushankar-ganapati-bhat-535856296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/bhanushankar-ganapati-bhat-535856296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -927,13 +930,13 @@
       <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
           <div class="team-card member3">
               <div class="member3-img">
-                  <img src="../img/team/Srinidhi D S-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
+                  <img src="assets/img/AERO/AERO CLUB core/Srinidhi D S-24.png" style="height: 150px; width: 150px;" class="img-fluid" alt="">
               </div>
               <div class="member3-info">
                   <h4>Srinidhi DS</h4>
                   <span>INFORMATION SCIENCE ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/srinidhids?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/srinidhids?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -948,7 +951,7 @@
                   <h4>Chinmay K</h4>
                   <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/chinmay-kulkarni-6873b62b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/chinmay-kulkarni-6873b62b3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -962,7 +965,7 @@
                   <h4>Prashith Shetty</h4>
                   <span>COMPUTER SCIENCE AND ENGINEERING (CYBER SECURITY) </span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/posts/prashith-shetty-a91508244_cyberinsight-cybersecurity-proton-activity-7238143150706282496-BZlo?utm_source=share&utm_medium=member3_android"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/posts/prashith-shetty-a91508244_cyberinsight-cybersecurity-proton-activity-7238143150706282496-BZlo?utm_source=share&utm_medium=member3_android"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -976,7 +979,7 @@
                   <h4>Bhoomika</h4>
                   <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/bhoomika-paradkar-a14b41306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/bhoomika-paradkar-a14b41306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -991,7 +994,7 @@
                   <h4>Abhyudaya J</h4>
                   <span>COMPUTER SCIENCE AND ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/abhyudaya-j-acharya-ab0307280/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/abhyudaya-j-acharya-ab0307280/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1009,7 +1012,7 @@
                   <h4>Divyamshu YN</h4>
                   <span>ELETRICAL AND ELECTRONICS ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/divyamshu-yn-82696324b/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/divyamshu-yn-82696324b/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1024,7 +1027,7 @@
                   <h4>Sharanya Acharya</h4>
                   <span> INFORMATION SCIENCE AND ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/sharanya-acharya-90a262264/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/sharanya-acharya-90a262264/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1039,7 +1042,7 @@
                   <h4>Hardhika U</h4>
                   <span>BIOTECHNOLOGY ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/hardhika-u-297262262/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/hardhika-u-297262262/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1054,7 +1057,7 @@
                   <h4>Sanketh K.K</h4>
                   <span>ROBOTICS AND ARTIFICIAL INTELLIGENCE ENGINEERING </span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/sanketh-k-k-59773722a/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/sanketh-k-k-59773722a/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1069,7 +1072,7 @@
                   <h4>N S K Abhiram</h4>
                   <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/n-s-k-abhiram-439340226/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/n-s-k-abhiram-439340226/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1084,7 +1087,7 @@
                   <h4>Suhana S Shetty</h4>
                   <span>COMPUTER AND COMMUNICATION ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/suhana-s-shetty-3b9a2021b/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/suhana-s-shetty-3b9a2021b/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1099,7 +1102,7 @@
                   <h4>Navraj D Shetty</h4>
                   <span>COMPUTER SCIENCE AND ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/navaraj-shetty-86978b298/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/navaraj-shetty-86978b298/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1114,7 +1117,7 @@
                   <h4>Pannagesha Vishwa Mithra</h4>
                   <span>MECHANICAL ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/pannagesha-vishwa-mithra-949762252/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/pannagesha-vishwa-mithra-949762252/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1129,7 +1132,7 @@
                   <h4>Pradeep B</h4>
                   <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                   <div class="social-icons">
-                      <a href="https://www.linkedin.com/in/pradeep-b-jakkanagoudra-87a64b22a/"><i class="icofont-linkedin"></i></a>
+                      <a href="https://www.linkedin.com/in/pradeep-b-jakkanagoudra-87a64b22a/"><i class="bi bi-linkedin"></i></a>
                   </div>
               </div>
           </div>
@@ -1150,7 +1153,7 @@
                     <h4>K Nishmitha Pai</h4>
                     <span>MECHANICAL ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/nishmitha-pai-713b54208"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/nishmitha-pai-713b54208"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -1165,7 +1168,7 @@
                     <h4>Chinmaya Shyamaraj</h4>
                     <span>COMPUTER SCIENCE AND ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/chinmaya-shyamaraj-176b19163"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/chinmaya-shyamaraj-176b19163"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -1180,7 +1183,7 @@
                     <h4>Padmashree PV</h4>
                     <span>ELECTRONICS AND COMMUNICATION ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/pv-padmashree/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/pv-padmashree/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -1195,7 +1198,7 @@
                     <h4>Deeksha</h4>
                     <span>ELETRICAL AND ELECTRONICS ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/deeksha-792250211"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/deeksha-792250211"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -1210,7 +1213,7 @@
                     <h4>Suchitra Pai</h4>
                     <span>BIOTECHNOLOGY ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/suchitra-pai-9a9466209/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/suchitra-pai-9a9466209/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -1225,7 +1228,7 @@
                     <h4>Gagan Nayak</h4>
                     <span>COMPUTER SCIENCE AND ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/gagan-nayak-12922920b/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/gagan-nayak-12922920b/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -1240,7 +1243,7 @@
                     <h4>Aditi Acharya</h4>
                     <span>ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/aditipraveenacharya/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/aditipraveenacharya/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -1255,7 +1258,7 @@
                     <h4>Nishmitha</h4>
                     <span>ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/nishmitha-bhandary-59065b221/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/nishmitha-bhandary-59065b221/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -1270,7 +1273,7 @@
                     <h4>Rathan Raj</h4>
                     <span>MECHANICAL ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/rathan-raj-0b2178229/"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/rathan-raj-0b2178229/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -1285,7 +1288,7 @@
                     <h4>Aditi Bhat</h4>
                     <span>ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING ENGINEERING</span>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/aditi-bhat-850b56208"><i class="icofont-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/aditi-bhat-850b56208"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
