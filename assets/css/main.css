@@ -1243,10 +1243,7 @@ section,
   justify-content: center;
   align-items: center;
 }
-.hotels .card h3 {
 
- 
-}
 .hotels .card .card-img .content{
   position: absolute;
   width: 100%;
@@ -1734,9 +1731,7 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
+ 
 body {
   background-color:  #eee;
 }
