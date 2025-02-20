@@ -648,7 +648,13 @@ h6 {
 .footer .footer-links ul a:hover {
   color: var(--accent-color);
 }
-
+.footercontent{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+}
 .footer .footer-contact p {
   margin-bottom: 5px;
 }
@@ -906,7 +912,9 @@ section,
   position: relative;
   z-index: 3;
 }
-
+.containerfooter{
+  display: flex;
+}
 .hero h2 {
   margin: 0;
   font-size: 48px;
