@@ -1791,3 +1791,240 @@ body {
   color:#f82249
 }
 
+.the-complete-lineup {
+  margin-top: 115px;
+}
+
+.the-complete-lineup .entry-title p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(0, 0%, 48%);
+}
+
+.the-complete-lineup .entry-title h2 {
+  width: 100%;
+  margin: 0;
+  font-size: 48px;
+  font-weight: 600;
+  color: hsl(0, 0%, 0%);
+}
+
+.content-section {
+  min-height: 4640px;
+  width: 100%;
+  padding-bottom: 120px;
+  background: url("images/middle-cover.jpg") no-repeat;
+  background-size: 100% auto;
+}
+
+.content-section .middle-cover {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.content-section .middle-cover img {
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+  # Portfolio
+  --------------------------------------------------------------*/
+  .portfolio {
+    padding-bottom: 60px;
+}
+
+.portfolio #portfolio-flters {
+    padding: 0;
+    margin: 0 0 35px 0;
+    list-style: none;
+    text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+    cursor: pointer;
+    margin: 0 12px 5px 12px;
+    display: inline-block;
+    padding: 0 4px 6px 4px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #444;
+    background: white;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid #fff;
+    font-family: "Montserrat";
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+    border-color: #68a4c4;
+    color: #68a4c4;
+}
+
+.portfolio .portfolio-item {
+    width: 100%;
+    background: #1e4356;
+    overflow: hidden;
+    min-height: 200px;
+    position: relative;
+    border-radius: 4px;
+    margin: 0 0 30px 0;
+}
+
+.portfolio .portfolio-item img {
+    width: 100%;
+
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s linear;
+    text-align: center;
+    top: 10%;
+    left: 0;
+    right: 0;
+}
+.portfolio-image-overlay{
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color:rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.portfolio-image-overlay h2{
+    color: #016fa5;
+}
+.portfolio-item:hover .portfolio-image-overlay {
+    color: aliceblue;
+    top: 0;
+    height: 100%;
+}
+
+.portfolio .portfolio-item .portfolio-info h3 {
+    font-size: 22px;
+}
+
+.portfolio .portfolio-item .portfolio-info h3 a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.portfolio .portfolio-item .portfolio-info a i {
+    color: #68a4c4;
+    font-size: 24px;
+}
+
+.portfolio .portfolio-item:hover img {
+    opacity: 0.4;
+    transform: scale(1.1);
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+    opacity: 1;
+    top: calc(50% - 30px);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2{
+    text-align: center;
+}
+
+.image-container {
+    width: 250px;
+    height: 35vh;
+    position: relative;
+    display: inline-block;
+}
+@media (min-width:412px) and (max-width:420px){
+    .gallery{
+        width: 10vh;
+        height:10vh ;
+    }
+}
+.image {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    width: 90%;
+}
+
+
+    
+    
+  
+
+  
+  
+
+/*.popup-content {
+    background-color: #30d0d5;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 80%;
+    max-width: 500px;
+    position: sticky;
+    text-align: center;
+}*/
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2{
+    text-align: center;
+}
