@@ -1790,4 +1790,8 @@ body {
 .card-title{
   color:#f82249
 }
+.acim{
+  width: 100%;
+  object-fit: cover;
+}
 
