@@ -138,12 +138,9 @@
           </div><!-- End Google Maps -->
 
           <div class="col-lg-6">
-            <form
-                method="post"
-                role="form"
-                class="php-email-form"
-                action="/mail"
-              >
+            <form action="https://api.web3forms.com/submit" method="POST" class="php-email-form" data-aos="fade-up"
+              data-aos-delay="400">
+              <input type="hidden" name="access_key" value="bfe0dee0-7a38-475b-a89e-7c0876f02dfb">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -157,6 +154,8 @@
                 <div class="col-md-12">
                   <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
                 </div>
+                <div class="col-md-6">
+                
 
                 <div class="col-md-12">
                   <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
@@ -168,6 +167,7 @@
                   <div class="sent-message">Your message has been sent. Thank you!</div>
 
                   <button type="submit">Send Message</button>
+                  
                 </div>
 
               </div>
