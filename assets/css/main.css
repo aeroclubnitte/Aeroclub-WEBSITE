@@ -915,6 +915,10 @@ section,
 .containerfooter{
   display: flex;
 }
+.mapform{
+  display: flex;
+  flex-wrap: wrap;
+}
 .hero h2 {
   margin: 0;
   font-size: 48px;
