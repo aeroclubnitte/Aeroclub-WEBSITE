@@ -1369,11 +1369,13 @@ section,
 
   .gallery .swiper-slide-active {
     background: var(--background-color);
-    border: 6px solid var(--accent-color);
+    border: 1px solid var(--accent-color);
     padding: 4px;
     z-index: 1;
     transform: scale(1.2);
     transition: none;
+    box-shadow:  0 8px 16px rgb(248, 34, 73);;
+    cursor: pointer;
   }
 }
 
