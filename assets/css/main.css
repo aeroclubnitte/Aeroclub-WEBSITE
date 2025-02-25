@@ -845,7 +845,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  /* padding: 60px 0; */
   scroll-margin-top: 92px;
   overflow: clip;
 }
@@ -863,7 +863,7 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   position: relative;
 }
 
@@ -873,6 +873,7 @@ section,
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  padding-top: 40px;
 }
 
 .section-title h2:after {
