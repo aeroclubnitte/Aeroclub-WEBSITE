@@ -117,6 +117,28 @@
         padding: 10px;
         text-shadow: 1px 1px 3px rgba(87, 159, 223, 0.8); 
    }
+   .popup-content69 {
+    position:relative;
+    top: 10%;
+    left: 35%;
+    width: 70%;
+    font-style:bold;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5 5 8px rgba(69, 228, 228, 0.985);
+    
+    max-height: 80vh;
+    /* Set a maximum height for the content */
+    overflow-y: auto;
+    z-index: 9999;
+}
+.popup-content69 h2 {
+    color: aqua;
+    padding: 10px;
+    text-shadow: 1px 1px 3px rgba(87, 159, 223, 0.8); 
+}
    .popup-content23 {
         position:relative;
         top: 10%;
@@ -427,7 +449,7 @@
    /* For very small mobile screens (Android/iOS) */
   @media (max-width: 359px) {
     .popup-content001 {
-      max-width: 90%;    /* Use a percentage to make it flexible on small screens */
+      max-width: 75%;    /* Use a percentage to make it flexible on small screens */
       padding: 15px; 
       top: 23%;
       width:100%;    /* Less padding for small screens */
@@ -445,9 +467,9 @@
   }
   @media (max-width: 359px) {
     .popup-content22 {
-      max-width: 90%;    /* Use a percentage to make it flexible on small screens */
+      max-width: 75%;    /* Use a percentage to make it flexible on small screens */
         padding: 15px;
-        top:48%;
+        top:40%;
         width: 100%;    /* Less padding for small screens */
     }
   }
@@ -462,10 +484,28 @@
     }
   }
   @media (max-width: 359px) {
+    .popup-content69 {
+      max-width: 75%;    /* Use a percentage to make it flexible on small screens */
+        padding: 15px;
+        top:40%;
+        width: 100%;    /* Less padding for small screens */
+    }
+  }
+  
+  /* For small to medium smartphones (Android/iOS) */
+  @media (min-width: 360px) and (max-width: 639px) {
+    .popup-content69 {
+      max-width: 70%;    /* Make the width slightly larger for mid-size phones */
+      padding: 20px;
+      top:23%;
+      width:100% ; /* Moderate padding for better spacing */
+    }
+  }
+  @media (max-width: 359px) {
     .popup-content23 {
-      max-width: 90%;    /* Use a percentage to make it flexible on small screens */
+      max-width: 75%;    /* Use a percentage to make it flexible on small screens */
       padding: 15px; 
-      top: 10%;
+      top: 30%;
       width:100%;    /* Less padding for small screens */
     }
   }
@@ -481,9 +521,9 @@
   }
   @media (max-width: 359px) {
     .popup-content24 {
-      max-width: 90%;    /* Use a percentage to make it flexible on small screens */
+      max-width: 80%;    /* Use a percentage to make it flexible on small screens */
       padding: 15px; 
-      top: 30%;
+      top: 40%;
       width:100%;    /* Less padding for small screens */
     }
   }
@@ -570,10 +610,26 @@
     }
     @media (min-width: 360px) and (max-width: 639px) {
       .popup-content30 {
-        max-width: 95%;    /* Make the width slightly larger for mid-size phones */
+        max-width: 75%;    /* Make the width slightly larger for mid-size phones */
         padding: 20px;
         width:100%;
-        top:56%;     /* Moderate padding for better spacing */
+        top:40%;     /* Moderate padding for better spacing */
+      }
+    }
+    @media (max-width: 359px) {
+      .popup-content30 {
+        max-width: 75%;    /* Use a percentage to make it flexible on small screens */
+        padding: 15px;
+        top:50%;
+        width: 100%;     /* Less padding for small screens */
+      }
+    }
+    @media (max-width: 359px) {
+      .popup-content300 {
+        max-width: 75%;    /* Use a percentage to make it flexible on small screens */
+        padding: 15px;
+        top:50%;
+        width: 100%;     /* Less padding for small screens */
       }
     }
     @media (min-width: 360px) and (max-width: 639px) {
@@ -598,6 +654,14 @@
         padding: 20px;
         width:100%;
         top:50%;     /* Moderate padding for better spacing */
+      }
+    }
+    @media (max-width: 359px) {
+      .popup-content1000 {
+        max-width: 75%;    /* Use a percentage to make it flexible on small screens */
+        padding: 15px;
+        top:50%;
+        width: 100%;     /* Less padding for small screens */
       }
     }
     @media (min-width: 360px) and (max-width: 639px) {
